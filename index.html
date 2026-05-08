@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nebula Bridge | Token Vesting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #0a0a0c; color: #00ff41; font-family: 'Courier New', monospace; }
+        .cyber-border { border: 1px solid #00ff41; box-shadow: 0 0 10px rgba(0, 255, 65, 0.2); }
+        .progress-bg { background: rgba(0, 255, 65, 0.1); }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="flex justify-between items-center mb-12 border-b border-green-900 pb-4">
+            <h1 class="text-2xl font-bold tracking-widest uppercase">Nebula_Bridge v1.0</h1>
+            <button id="connect-btn" class="cyber-border px-6 py-2 hover:bg-[#00ff41] hover:text-black transition">CONNECT_SYSTEM</button>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="cyber-border p-6 bg-black/50">
+                <p class="text-xs text-green-700 mb-2">// TOTAL_LOCKED</p>
+                <h2 class="text-4xl font-bold mb-6">500,000 <span class="text-sm uppercase">Nebula</span></h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span>VESTING_PROGRESS</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="w-full h-2 progress-bg">
+                            <div class="bg-[#00ff41] h-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cyber-border p-6 bg-black/50 flex flex-col justify-center">
+                <p class="text-xs text-green-700 mb-2">// AVAILABLE_TO_CLAIM</p>
+                <h2 class="text-4xl font-bold mb-6">12,450.00</h2>
+                <button id="claim-btn" class="w-full bg-[#00ff41] text-black font-bold py-4 hover:shadow-[0_0_20px_#00ff41] transition">EXECUTE_CLAIM</button>
+            </div>
+        </div>
+
+        <div class="mt-8 cyber-border p-4 bg-black text-[10px] h-32 overflow-hidden opacity-50">
+            <p>> Initializing bridge connection...</p>
+            <p>> Wallet status: Handshake pending...</p>
+            <p>> Fetching vesting schedules for address 0x...</p>
+            <p class="animate-pulse">> System ready.</p>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('connect-btn');
+        btn.onclick = () => {
+            btn.innerText = "LINKED_0x4F...3A";
+            btn.style.background = "#00ff41";
+            btn.style.color = "black";
+        }
+    </script>
+</body>
+</html>
